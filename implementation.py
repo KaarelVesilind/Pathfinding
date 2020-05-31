@@ -92,48 +92,6 @@ class GridWithWeights(SquareGrid):
     
     def cost(self, from_node, to_node):
         return self.weights.get(to_node, 1)
-'''    
-from PIL import Image
-image = Image.open('test.png', 'r')
-widthp, heightp = image.size
-pixel_values = list(image.getdata())
-#tee dict kus igale koordinaadile vastab värv
-#ja siis muuda värv ära numbriks ja lase tee planeerid
-table = []
-count = 0
-for a in range(widthp):
-    for b in range(heightp):
-        ruut = a, b
-        table.append(ruut)
-värvid = {}
-for i in range(len(table)):
-    värvid[table[i]] = pixel_values[i]
-
-diagram4 = GridWithWeights(widthp, heightp)
-
-värvid2 = värvid
-
-
-for a in range(widthp):
-    for b in range(heightp):
-        ruut = a, b
-        if värvid[ruut] == (255, 201, 14, 255):
-            värvid2[ruut] = 5
-        if värvid[ruut] == (153, 217, 234, 255):
-            värvid2[ruut] = 3
-        if värvid[ruut] == (195, 195, 195, 255):
-                värvid2[ruut] = 2
-        if värvid[ruut] == (200, 191, 231, 255):
-            värvid2[ruut] = 4
-        if värvid[ruut] == (255, 174, 201, 255):
-            värvid2[ruut] = 1
-        if värvid[ruut] == (239, 228, 176, 255):
-            värvid2[ruut] = 6
-
-
-diagram4.weights = värvid2
-'''
-#print(diagram4.weights)
 
 import heapq
 
